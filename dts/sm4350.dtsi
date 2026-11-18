@@ -36,6 +36,9 @@
             #address-cells = <0>;
             interrupt-controller;
             redistributor-stride = <0 0x20000>;
+            /* holi routes the virtual timer to PPI 3 = INTID 19 (stock DT: arm,armv8-timer <1 1>, <1 2>, <1 3>, <1 0>),
+             * not 27: ArmCpu enables and dispatches this INTID as the scheduler's timer. */
+            virtual-timer-ppi = <19>;
         };
 
         gcc: clock-controller@1400000 {
