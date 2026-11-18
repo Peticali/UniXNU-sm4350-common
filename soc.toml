@@ -1,0 +1,11 @@
+"schema_version" = 2
+
+["soc"]
+"name" = "sm4350"
+"description" = "Qualcomm SM4350 (holi): Kryo 460 (2x Cortex-A76 + 6x Cortex-A55, no PAC), Adreno 619, UFS 2.2, RPM (SMD/GLINK)"
+# Hardware data: the moto g53 5G (penang) stock vendor_boot DTB and its msm-5.4 kernel; the penang XNU port's drivers.
+"source_repository" = "local: moto g53 stock vendor_boot DTB"
+"source_revision" = "penang-stock"
+
+["components"]
+"include" = ["ArmCpu", "ArmDTPlatform"]
