@@ -1,15 +1,15 @@
---- a/osfmk/arm64/machine_routines.c	2026-11-18 04:54:10.042657894 -0300
-+++ b/osfmk/arm64/machine_routines.c	2026-11-18 04:54:10.053918951 -0300
-@@ -102,6 +102,12 @@
+--- a/osfmk/arm64/machine_routines.c	2026-11-18 04:56:07.115970899 -0300
++++ b/osfmk/arm64/machine_routines.c	2026-11-18 04:56:07.125391376 -0300
+@@ -100,6 +100,12 @@
+  */
+ SECURITY_READ_ONLY_LATE(uint64_t) cluster_pio_ro_ctl_mask_glb = 0;
  
- #if CONFIG_CPU_COUNTERS
- #include <kern/kpc.h>
-+
 +/*
 + * UniXNU-sm4350-common: the platform sleep hook UniXNU's ArmCpu installs (weak_import there) when PSCI CPU suspend is
 + * available. Defined here so the static kernel link resolves it; NULL until ArmCpu sets it.
 + */
 +void (*arm64_platform_sleep_hook)(boolean_t boot_cpu) = NULL;
++
+ #if CONFIG_CPU_COUNTERS
+ #include <kern/kpc.h>
  #endif /* CONFIG_CPU_COUNTERS */
- 
- #define MPIDR_CPU_ID(mpidr_el1_val)             (((mpidr_el1_val) & MPIDR_AFF0_MASK) >> MPIDR_AFF0_SHIFT)
